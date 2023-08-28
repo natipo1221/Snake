@@ -34,16 +34,16 @@ def menu():
                     speed = 30
                     done = True
 
-        screen.fill((255, 255, 255))
+        screen.fill((0, 0, 0))
 
-        pygame.draw.rect(screen, (0, 0, 0), button_easy)
-        pygame.draw.rect(screen, (0, 0, 0), button_medium)
-        pygame.draw.rect(screen, (0, 0, 0), button_hard)
+        pygame.draw.rect(screen, (255, 255, 255), button_easy)
+        pygame.draw.rect(screen, (255, 255, 255), button_medium)
+        pygame.draw.rect(screen, (255, 255, 255), button_hard)
 
         welcome_1 = font.render("Welcome to the snake game, Please choose a level", True, (255, 0, 0))
-        text_easy = font.render("Easy", True, (255, 255, 255))
-        text_medium = font.render("Medium", True, (255, 255, 255))
-        text_hard = font.render("Hard", True, (255, 255, 255))
+        text_easy = font.render("Easy", True, (0, 0, 0))
+        text_medium = font.render("Medium", True, (0, 0, 0))
+        text_hard = font.render("Hard", True, (0, 0, 0))
         screen.blit(welcome_1, (70, 70))
         screen.blit(text_easy, (250, 210))
         screen.blit(text_medium, (250, 310))
@@ -79,12 +79,12 @@ def menu2():
                     colors = ["green", "blue", "yellow", "pink"]
                     done = True
 
-        screen.fill((255, 255, 255))
+        screen.fill((0, 0, 0))
 
-        pygame.draw.rect(screen, (255, 255, 255), welcome)
-        pygame.draw.rect(screen, (0, 0, 0), button_red)
-        pygame.draw.rect(screen, (0, 0, 0), button_blue)
-        pygame.draw.rect(screen, (0, 0, 0), button_colors)
+        pygame.draw.rect(screen, (0, 0, 0), welcome)
+        pygame.draw.rect(screen, (255, 255, 255), button_red)
+        pygame.draw.rect(screen, (255, 255, 255), button_blue)
+        pygame.draw.rect(screen, (255, 255, 255), button_colors)
 
         text_welcome = font.render("Choose a color for the snake", True, (255, 0, 0))
         text_easy = font.render("Red", True, (255, 0, 0))
