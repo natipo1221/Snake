@@ -117,8 +117,11 @@ def end_game():
     play_text = font.render("Play", True, (255, 255, 255))
     play_text_rect = play_text.get_rect(center=play_button.center)
     quit_button = pygame.Rect(button_x, button_y + button_height + button_spacing, button_width, button_height)
+    menu_button = pygame.Rect(button_x, button_y + button_height * 2 + button_spacing * 2, button_width, button_height)
     quit_text = font.render("Quit", True, (255, 255, 255))
     quit_text_rect = quit_text.get_rect(center=quit_button.center)
+    menu_text = font.render("Menu", True, (255, 255, 255))
+    menu_text_rect = menu_text.get_rect(center=menu_button.center)
 
     running = True
     while running:
@@ -129,6 +132,9 @@ def end_game():
                 mouse_pos = pygame.mouse.get_pos()
                 if play_button.collidepoint(mouse_pos):
                     running = False
+                elif menu_button.collidepoint(mouse_pos):
+                    pygame.mixer_music.stop()
+                    menu()
                 elif quit_button.collidepoint(mouse_pos):
                     quit()
 
@@ -140,6 +146,8 @@ def end_game():
         screen.blit(play_text, play_text_rect)
         pygame.draw.rect(screen, (255, 0, 0), quit_button)
         screen.blit(quit_text, quit_text_rect)
+        pygame.draw.rect(screen, (0, 0, 255), menu_button)
+        screen.blit(menu_text, menu_text_rect)
 
         pygame.display.update()
 
