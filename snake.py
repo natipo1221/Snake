@@ -10,8 +10,6 @@ screen = pygame.display.set_mode(size)
 
 
 def menu():
-    pygame.mixer_music.load("music22 (online-audio-converter.com).wav")
-    pygame.mixer_music.play(5, 0, 0)
     global speed, screen
     pygame.display.set_caption("Snake")
     font = pygame.font.Font(None, 36)
